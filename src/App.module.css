@@ -1,0 +1,86 @@
+.wordCloudHolder {
+  padding: 96px 64px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  color: gray;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.title {
+  grid-column: 1 / span 2;
+}
+
+.informationTitle {
+  font-size: 28px;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.topicWord {
+  color: #3b3b3b;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.total {
+  margin-bottom: 24px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #3b3b3b;
+  font-weight: 700;
+}
+
+.mentionsTitle {
+  font-size: 20px;
+}
+
+.list {
+  list-style: none;
+  margin: 16px 0 8px;
+  font-size: 18px;
+
+  li {
+    margin-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 4px;
+
+    &:last-of-type {
+      border-bottom: 2px solid #3b3b3b;
+    }
+  }
+
+  span {
+    margin-left: 8px;
+    font-weight: 700;
+
+    &.positive {
+      color: green;
+    }
+    &.negative {
+      color: red;
+    }
+  }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .wordCloudHolder {
+    padding: 24px 12px 24px;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .wordCloudHolder {
+    padding: 56px 12px 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    grid-column: auto;
+  }
+}
