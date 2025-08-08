@@ -1,0 +1,109 @@
+.app {
+  padding: 96px 64px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-auto-rows: min-content;
+  gap: 24px;
+  color: gray;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.app__title {
+  grid-column: 1 / span 2;
+}
+
+.app__infoTitle {
+  font-size: 28px;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.app__topicWord {
+  color: #3b3b3b;
+  font-weight: 700;
+}
+
+.app__total {
+  margin-bottom: 24px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #3b3b3b;
+  font-weight: 700;
+}
+
+.app__mentionsTitle {
+  font-size: 20px;
+}
+
+.app__mentionsList {
+  list-style: none;
+  margin: 16px 0 8px;
+  font-size: 18px;
+}
+
+.app__mentionsList li {
+  margin-bottom: 4px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4px;
+}
+
+.app__mentionsList li:last-of-type {
+  border-bottom: 2px solid #3b3b3b;
+}
+
+.app__mentionsValue--positive {
+  margin-left: 8px;
+  font-weight: 700;
+  color: green;
+}
+
+.app__mentionsValue--neutral {
+  margin-left: 8px;
+  font-weight: 700;
+  color: gray;
+}
+
+.app__mentionsValue--negative {
+  margin-left: 8px;
+  font-weight: 700;
+  color: red;
+}
+
+.app__totalValue {
+  font-weight: 700;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+  .app {
+    padding: 24px 12px 24px;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .app {
+    padding: 56px 12px 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .app__title {
+    grid-column: auto;
+  }
+
+  .app__topicWord {
+    display: block;
+  }
+}

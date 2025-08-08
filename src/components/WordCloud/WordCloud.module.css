@@ -1,0 +1,118 @@
+.wordCloud {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.wordCloud__controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 4px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  align-items: center;
+  z-index: 1;
+}
+
+.wordCloud__zoomBtn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.wordCloud__zoomBtn:first-of-type {
+  background: rgba(0, 128, 0, 0.4);
+}
+
+.wordCloud__zoomBtn:last-of-type {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+.wordCloud__zoomBtn:first-of-type:hover {
+  background: rgba(0, 128, 0, 0.8);
+  color: white;
+}
+
+.wordCloud__zoomBtn:last-of-type:hover {
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+.wordCloud__zoomLabel {
+  margin-left: 12px;
+}
+
+.wordCloud__holder {
+  position: relative;
+}
+
+.wordCloud__svg {
+  min-width: 100%;
+  min-height: 100%;
+  aspect-ratio: calc(800 / 600);
+  position: relative;
+}
+
+.wordCloud__wordGroup {
+  cursor: pointer;
+  position: relative;
+}
+
+.wordCloud__word {
+  pointer-events: auto;
+}
+
+.wordCloud__line {
+  stroke-width: 2;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+@media (max-width: 1023px) {
+  .wordCloud__svg {
+    transform: scale(1.5);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .wordCloud__holder {
+    position: relative;
+  }
+
+  .wordCloud__holder::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 25px;
+    height: calc(100% - 60px);
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+  }
+
+  .wordCloud__holder::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 100%;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+  }
+
+  .wordCloud__svg {
+    aspect-ratio: calc(400 / 600);
+    transform: scale(2);
+    transform-origin: center;
+  }
+}
